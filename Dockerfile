@@ -5,8 +5,8 @@ COPY package.json /src/package.json
 WORKDIR /src
 RUN npm install
 
-ADD . .
+COPY . .
 
 EXPOSE 8545
 
-ENTRYPOINT ["node", "./bin/testrpc"]
+CMD ["/bin/bash", "/src/run.sh"]
